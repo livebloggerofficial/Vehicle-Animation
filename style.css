@@ -1,0 +1,81 @@
+.my-container {
+  height: 500px;
+  width: 800px;
+  margin: 40px auto;
+  background: #93c3ea;
+  position: relative;
+  overflow: hidden;
+}
+
+.my-container .buildings,
+.my-container .sky,
+.my-container .road {
+  position: absolute;
+  height: 100%;
+  width: 200%;
+}
+
+.my-container img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.my-container .buildings {
+  animation: move-left 5s linear infinite;
+}
+
+.my-container .road {
+  animation: move-left 4s linear infinite;
+}
+
+.my-container .sky {
+  animation: move-left 20s linear infinite;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.my-container .bus {
+  position: absolute;
+  bottom: -35px;
+  left: 150px;
+  z-index: 200;
+  width: 250px;
+}
+
+.my-container .bus svg {
+  width: 100%;
+}
+
+.my-container .bus #body {
+  animation: bounce 700ms ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.my-container .bus #wheel_left,
+.my-container .bus #wheel_right {
+  transform-box: fill-box;
+  transform-origin: 40px;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
